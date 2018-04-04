@@ -53,7 +53,7 @@ for host_line in $host_list; do
     [ -z "$hits" ] && continue
 
     # Extract IP and make sure it's a valid IPv4 address
-    ip=$(echo $host_line | cut -d '"' -f 18 | grep -E '^[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*$')
+    ip=$(echo $host_line | cut -d '"' -f 18 | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$')
     [ -z "$ip" ] && continue
 
     # Too few hits?
@@ -71,7 +71,7 @@ for host_line in $host_list; do
     [ -z "$traffic" ] && continue
 
     # Extract IP and make sure it's a valid IPv4 address
-    ip=$(echo $host_line | cut -d '"' -f 18 | grep -E '^[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*$')
+    ip=$(echo $host_line | cut -d '"' -f 18 | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$')
     [ -z "$ip" ] && continue
 
     [ $traffic -lt $MAX_TRAFFIC ] && continue
